@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loi de Finances 2026 | Import Algérie - Référentiel Complet CIDTA CTCA CII CPF</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d5c91;
+            --primary-dark: #0a4a73;
+            --secondary: #1a7bb8;
+            --accent: #00a651;
+            --accent-light: #e8f5e9;
+            --gold: #d4a84b;
+            --bg-gradient: linear-gradient(135deg, #0d5c91 0%, #1a7bb8 50%, #0a4a73 100%);
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            --card-hover: 0 25px 60px rgba(13,92,145,0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+            background: var(--bg-gradient);
+            color: #2d3748;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header Import Algérie */
+        .header {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-bottom: 3px solid var(--accent);
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-import {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(13,92,145,0.4);
+        }
+        .brand-text h1 { font-size: 1.5rem; color: var(--primary); font-weight: 800; }
+        .brand-text p { font-size: 0.85rem; color: #64748b; }
+        .header-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .header-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .header-links a:hover { background: var(--accent-light); color: var(--accent); }
+        .search-filter {
+            display: flex;
+            gap: 0.75rem;
+            flex: 1;
+            max-width: 650px;
+        }
+        .search-wrap {
+            flex: 1;
+            position: relative;
+        }
+        .search-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #94a3b8; }
+        .search {
+            width: 100%;
+            padding: 0.85rem 1rem 0.85rem 2.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .search:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,92,145,0.15); }
+        .filter {
+            padding: 0.85rem 1.25rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .filter:hover, .filter.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .container { max-width: 1650px; margin: 2rem auto; padding: 0 1.5rem; }
+        .section-title {
+            margin: 2.5rem 0 1.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            box-shadow: var(--card-shadow);
+        }
+        .section-title h2 { font-size: 1.25rem; color: var(--primary); font-weight: 700; }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-4px); }
+        .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+        .stat-card span { font-size: 0.95rem; color: #64748b; }
+        .hint-msg {
+            text-align: center;
+            color: rgba(255,255,255,0.95);
+            font-size: 0.9rem;
+            margin: -0.5rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .hint-msg i { opacity: 0.9; }
+
+        /* Grid Articles */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.75rem;
+        }
+        .card {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--card-hover);
+        }
+        .card:hover::before { opacity: 1; }
+        .card-header {
+            padding: 1.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+        }
+        .card-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            font-size: 2rem;
+            opacity: 0.85;
+        }
+        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .card-meta { font-size: 0.88rem; opacity: 0.95; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .card-body { padding: 1.5rem; position: relative; }
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .card-actions .btn-sm {
+            padding: 0.5rem 0.9rem;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .btn-print { background: #f1f5f9; color: var(--primary); border: 1px solid #e2e8f0; }
+        .btn-print:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-box {
+            background: white;
+            max-width: 720px;
+            width: 100%;
+            max-height: 90vh;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+            animation: slideUp 0.35s ease;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .modal-box .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.75rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+        }
+        .modal-box .modal-header h2 { font-size: 1.35rem; font-weight: 700; flex: 1; padding-right: 3rem; }
+        .modal-box .modal-header .modal-badges { display: flex; gap: 0.5rem; align-items: center; }
+        .modal-box .modal-header .badge { background: rgba(255,255,255,0.25); padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; }
+        .modal-box .modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .modal-box .modal-body .section-block { margin-bottom: 1.5rem; }
+        .modal-box .modal-body .section-block h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .modal-box .modal-body .section-block h4::before {
+            content: '';
+            width: 4px;
+            height: 1em;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        .modal-box .modal-body .section-block p { color: #475569; line-height: 1.7; font-size: 0.95rem; }
+        .modal-box .modal-footer {
+            padding: 1.25rem 2rem;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.35); }
+        .snippet { color: #475569; margin-bottom: 0; line-height: 1.55; font-size: 0.95rem; }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-success { background: var(--accent); color: white; }
+        .btn-success:hover { background: #008f47; transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        /* Actions bar */
+        .actions-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .actions-bar .btn { padding: 0.9rem 1.75rem; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+        .footer a { color: white; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .header { flex-direction: column; text-align: center; }
+            .search-filter { width: 100%; flex-direction: column; }
+            .brand { justify-content: center; }
+            .header-links { justify-content: center; }
+        }
+
+        @media print {
+            body { background: white; }
+            .header { box-shadow: none; border: 1px solid #ddd; }
+            .actions-bar, .search-filter, .hint-msg, .card-actions, .modal-overlay { display: none !important; }
+            .card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <div class="logo-import">IA</div>
+            <div class="brand-text">
+                <h1>Import Algérie</h1>
+                <p>Référentiel Fiscal • Tableau de Bord</p>
+            </div>
+        </div>
+        <div class="header-links">
+            <a href="https://www.mfdgi.gov.dz" target="_blank" title="DGI"><i class="fas fa-landmark"></i> DGI</a>
+            <a href="https://mfdgi.gov.dz/portailpublic/" target="_blank" title="Jibayatic"><i class="fas fa-file-invoice"></i> Jibayatic</a>
+        </div>
+        <div class="search-filter">
+            <div class="search-wrap">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search" placeholder="Rechercher un article (CIDTA, CTCA, CII, CPF...)" oninput="filterCards(this.value)">
+            </div>
+            <div class="filter active" data-cat="all">Tous</div>
+            <div class="filter" data-cat="cidta">CIDTA</div>
+            <div class="filter" data-cat="ctca">CTCA</div>
+            <div class="filter" data-cat="cii">CII</div>
+            <div class="filter" data-cat="cpf">CPF</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card"><div class="stat-num">88</div><span>Articles LF 2026</span></div>
+            <div class="stat-card"><div class="stat-num">4</div><span>Codes Modifiés</span></div>
+            <div class="stat-card"><div class="stat-num">100%</div><span>Référence Complète</span></div>
+        </div>
+        <p class="hint-msg"><i class="fas fa-mouse-pointer"></i> Cliquez sur un article pour ouvrir le détail • Bouton <i class="fas fa-print"></i> pour imprimer chaque article</p>
+
+        <!-- SECTION 1 : CODE DES IMPÔTS DIRECTS ET TAXES ASSIMILÉES -->
+        <div class="section-title">
+            <h2><i class="fas fa-landmark"></i> 1 — Code des Impôts Directs et Taxes Assimilées (CIDTA)</h2>
+        </div>
+        <div class="grid" id="grid" data-section="cidta">
+            <div class="card cadre" data-cat="cidta" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 5 — Abrogation Art. 44, 53 et 59</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 44, 53 et 59</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 5 — Les dispositions des articles 44, 53 et 59 du code des impôts directs et taxes assimilées, sont abrogées.</p>
+                    <p><strong>Modification apportée :</strong> La loi de finances pour 2026 abroge les articles 44, 53 et 59 du CIDTA. Cette mesure supprime l'obligation de souscrire des déclarations spéciales distinctes concernant : les revenus fonciers ; les revenus de capitaux mobiliers (dividendes d'actions et parts sociales) ; certains intérêts de créances, dépôts et cautionnements. Ces catégories sont désormais déclarées de manière unifiée au sein de la déclaration annuelle globale (formulaire série G n°1), complétée par le formulaire série G n°51 pour les revenus fonciers.</p>
+                    <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 6 — Modification Art. 46</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 46</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 6 — Modification de l'article 46 : nouveau 9° — Les bénéfices nets d'impôts réalisés en Algérie, au titre d'une année d'imposition, par une société non résidente, à travers sa succursale ou toute autre installation professionnelle au sens fiscal.</p>
+                    <p><strong>Modification apportée :</strong> La modification de l'article 46-9° remplace « les bénéfices transférés » par « les bénéfices nets d'impôts réalisés en Algérie ». Le bénéfice net (après IBS) est automatiquement considéré comme revenu distribué dès la clôture de l'exercice, même sans transfert effectif vers l'étranger.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 7 — Modification Art. 71</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 71</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 7 — Modification de l'article 71 : harmonisation des versions (terme « notamment » en lieu de « entre autres »).</p>
+                    <p><strong>Modification apportée :</strong> Mise en concordance des versions arabe et française de l'article 71 relatif aux avantages en nature.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 8 — Modification Art. 75</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 75</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 8 — Modification de l'article 75 : ajout du NIN obligatoire pour chaque bénéficiaire ; télédéclaration obligatoire de l'état des salaires (G n°29) pour les contribuables relevant des services fiscaux dotés du système SI-JIBAYATIC.</p>
+                    <p><strong>Modification apportée :</strong> Télédéclaration obligatoire du formulaire G n°29 et mention obligatoire du NIN. Délai inchangé : 30 avril de l'année suivante.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 9 — Modification Art. 78</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 78</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 9 — Lorsque le prix d'acquisition ou de création d'un bien ne peut être déterminé, la valeur est fixée forfaitairement à 40 % du prix de vente pour le calcul de la plus-value imposable.</p>
+                    <p><strong>Modification apportée :</strong> Règle forfaitaire à 40 % du prix de cession lorsque le prix d'acquisition ne peut être prouvé (biens anciens, successions sans traces, transmissions familiales non formalisées).</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 10 — Modification Art. 100</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 100</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 10 — L'état des charges doit préciser, pour les dettes et rentes : nom et domicile du créancier, nature et date du titre, juridiction, montant des intérêts ou arrérages annuels.</p>
+                    <p><strong>Modification apportée :</strong> Suppression de l'obligation d'indiquer les détails des impôts directs et taxes assimilées dans l'état des charges joint à la déclaration.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 11 — Modification Art. 104</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 104</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 11 — Le taux de la retenue à la source applicable aux produits des actions ou parts sociales et revenus assimilés est fixé à 10 % libératoire d'impôt (au lieu de 15 %).</p>
+                    <p><strong>Modification apportée :</strong> Réduction du taux de 15 % à 10 % pour les dividendes perçus par les personnes physiques résidentes fiscales en Algérie. Objectif : favoriser l'épargne et le financement de l'économie.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 12 — Modification Art. 140</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 140</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 12 — Nouveau 5° : Le bénéfice imposable des entreprises non résidentes intervenant en Algérie dans le cadre d'un seul contrat (fourniture de services, livraison d'équipements, réalisation de travaux) doit comprendre l'ensemble des bénéfices réalisés en Algérie, y compris ceux relatifs à la fourniture des équipements, même facturés séparément et/ou dédouanés au nom de la partie contractante.</p>
+                    <p><strong>Modification apportée :</strong> Base imposable à l'IBS ou IRG incluant tous les bénéfices réalisés en Algérie pour les contrats clé en main ou EPC. Lutte contre la planification fiscale agressive.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 13 — Création Art. 153 ter</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 153 ter (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 13 — Les entreprises non résidentes intervenant en Algérie via un établissement stable ou installation professionnelle sont soumises aux obligations fiscales des personnes morales imposées au régime du bénéfice réel (art. 148) et aux obligations de l'article 161-1.</p>
+                    <p><strong>Modification apportée :</strong> Clarification et renforcement de la transparence des règles applicables aux entités étrangères.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 14 — Abrogation Art. 156 bis</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 156 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 14 — Abrogation complète de l'article 156 bis.</p>
+                    <p><strong>Modification apportée :</strong> Suppression de la possibilité pour les entreprises étrangères sans installation permanente de choisir l'imposition sur bénéfice réel. Désormais obligatoirement imposées par retenue à la source sur base brute.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 15 — Modification Art. 161</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 161</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 15 — Suppression de l'obligation de notification par l'administration ; extension à tout nouveau contrat ; obligation de notification des avenants, modifications ou résiliations dans les 10 jours ; amende art. 194-5 pour défaut de tenue du livre comptable.</p>
+                    <p><strong>Modification apportée :</strong> Renforcement du contrôle fiscal sur les entreprises étrangères. Traçabilité des contrats et opérations.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 16 — Modification Art. 169</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 169</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 16 — Nouveau 6° : Ne sont pas admises en déduction les sommes versées par l'établissement stable au siège central (redevances, honoraires, commissions, intérêts sur prêts), sauf remboursements de frais réels.</p>
+                    <p><strong>Modification apportée :</strong> Interdiction de déduction des paiements internes (redevances, honoraires, commissions, intérêts) versés par l'établissement stable au siège. Alignement sur le modèle ONU.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 17 — Modification Art. 192</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 192</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 17 — Suppression du 3e alinéa du paragraphe 2 (référence aux art. 44, 53, 59) ; renvoi explicite à l'article 322 ou au 4e paragraphe pour les sanctions.</p>
+                    <p><strong>Modification apportée :</strong> Clarification et harmonisation des pénalités applicables.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 18 — Modification Art. 196 bis</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 196 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 18 — Obligation de consacrer 1 % de la masse salariale brute semestrielle à la formation professionnelle continue et 1 % à l'apprentissage et/ou stages des étudiants. Si non respecté : taxes correspondantes.</p>
+                    <p><strong>Modification apportée :</strong> Deux obligations distinctes (formation continue et apprentissage/stages) avec calcul semestriel.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 19 — Modification Art. 196 quater</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 196 quater</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 19 — L'assiette des taxes de formation et d'apprentissage est constituée de la masse salariale brute semestrielle (rémunérations brutes versées durant le semestre, avant déduction des cotisations sociales, retraites et IRG/salaires).</p>
+                    <p><strong>Modification apportée :</strong> Passage du calcul annuel au calcul semestriel.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 20 — Modification Art. 196 quinquies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 196 quinquies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 20 — Taux = différence entre 1 % et le ratio dépenses éligibles / masse salariale semestrielle brute. Définition des dépenses de formation et d'apprentissage. Possibilité d'affecter le différentiel apprentissage vers la formation si justifié.</p>
+                    <p><strong>Modification apportée :</strong> Calcul semestriel ; possibilité de réaffectation du manque en apprentissage vers la formation professionnelle.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 21 — Modification Art. 196 sexies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 196 sexies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 21 — Déclaration et paiement semestriels au plus tard le 20 du mois suivant le semestre. Déclaration obligatoire même si aucun montant n'est dû.</p>
+                    <p><strong>Modification apportée :</strong> Passage de l'annuel au semestriel pour TFPC et TAPP.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 22 — Modification Art. 261-m</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 261-m</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 22 — Les notaires déposent un extrait sommaire des actes portant translation ou attribution de propriété immobilière au bureau de l'enregistrement.</p>
+                    <p><strong>Modification apportée :</strong> Simplification de la rédaction ; adaptation à l'enregistrement sur expédition conforme.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 23 — Modification Art. 281 undecies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 281 undecies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 23 — Déclaration de l'ISF obligatoire par voie électronique via le portail Jibayatic, tous les 4 ans au plus tard le 30 avril. Auto-liquidation par système automatisé. Paiement par rôle individuel.</p>
+                    <p><strong>Modification apportée :</strong> Modernisation de la déclaration ISF ; télédéclaration obligatoire.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 24 — Modification Art. 282 quinquies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 282 quinquies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 24 — Passage au régime du bénéfice réel au titre de chacune des activités, dans les conditions de l'article 282 quater, à compter de l'année suivant le dépassement du seuil.</p>
+                    <p><strong>Modification apportée :</strong> Harmonisation des délais ; passage par activité et non global.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 25 — Modification Art. 303</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 303</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 25 — Graduation des peines pénales selon le montant des droits éludés : amende 50 000 à 100 000 DA (≤ 100 000 DA) ; prison 2 à 6 mois + amende (100 000 à 1 M DA) ; prison 6 mois à 2 ans (1 à 5 M DA) ; prison 2 à 5 ans (5 à 10 M DA) ; prison 5 à 10 ans (> 10 M DA).</p>
+                    <p><strong>Modification apportée :</strong> Adaptation au pôle pénal économique et financier.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 26 — Modification Art. 355</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 355</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 26 — Nouveaux contribuables dispensés des acomptes provisionnels la première année. Règles sur les excédents de versement : demande de remboursement dans un délai de 4 ans ; en cas de cessation, demande au plus tard le 31 décembre de l'année suivante ; décision motivée et notifiée ; réclamation possible (art. 72 et 73 CPF).</p>
+                    <p><strong>Modification apportée :</strong> Dispense acomptes première année ; procédure de remboursement des excédents encadrée.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 27 — Création Art. 356 quater</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 356 quater (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 27 — Demandes de remboursement des excédents IBS : auprès du directeur des grandes entreprises, directeur des impôts de wilaya ou chef de centre ; délai 4 ans ; en cas de cessation, demande au plus tard le 31 décembre de l'année suivante ; décision motivée et notifiée ; réclamation (art. 72 et 73 CPF).</p>
+                    <p><strong>Modification apportée :</strong> Traitement comme acte de gestion ; réduction des délais de traitement.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 28 — Création Art. 356 quinquies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 356 quinquies (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 28 — Les sociétés non résidentes doivent calculer et payer l'impôt sur les bénéfices réputés distribués (art. 46-9°) dans les conditions et délais du solde de liquidation IBS.</p>
+                    <p><strong>Modification apportée :</strong> Uniformisation du recouvrement de l'impôt sur les bénéfices réputés distribués.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 29 — Modification Art. 364 nonies</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 364 nonies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 29 — Rétablissement des règles de liquidation et versement du solde TLS : auto-liquidation ; solde au plus tard le 20 février ; bordereau spécifique ; pénalités en cas de retard ; excédent imputable ou remboursable.</p>
+                    <p><strong>Modification apportée :</strong> Complétion de l'article après suppression accidentelle en 2025.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 : CODE DES TAXES SUR LE CHIFFRE D'AFFAIRES -->
+        <div class="section-title">
+            <h2><i class="fas fa-calculator"></i> 2 — Code des Taxes sur le Chiffre d'Affaires (CTCA)</h2>
+        </div>
+        <div class="grid" data-section="ctca">
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 51 — Modification Art. 23 CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 23</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 51 — Taux réduit TVA 9 % étendu à : réhabilitation et viabilisation des anciens logements ; prestations restauration et hébergement fournies aux patients par établissements de santé ; prestations formation professionnelle par établissements agréés (hébergement et restauration inclus) ; transports de voyageurs par bus.</p>
+                    <p><strong>Modification apportée :</strong> Allègement fiscal sur secteurs prioritaires.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 52 — Modification Art. 25 CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 25</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 52 — TIC tabac : tarification unique cigarettes et tabac à narguilé (2 250 DA/kg + 15 %) ; tabacs à fumer, priser, mâcher : 781 DA/kg + 15 %.</p>
+                    <p><strong>Modification apportée :</strong> Unification tarification ; lutte contre la fraude.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 53 — Modification Art. 26 bis CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 26 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 53 — Produit TIC : 90 % budget État ; 10 % Fonds spécial promotion des exportations (compte 302-153).</p>
+                    <p><strong>Modification apportée :</strong> Quote-part exportateurs passée de 5 % à 10 %.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 54 — Modification Art. 28 bis CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 28 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 54 — Mise à jour liste produits pétroliers TPP : suppression essence super et normale ; conservation essence sans plomb (1700 DA/HL), gas-oil (900 DA/HL), GPL/C (1 DA/HL).</p>
+                    <p><strong>Modification apportée :</strong> Alignement sur la réalité du marché national.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 55 — Modification Art. 40 CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 40</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 55 — Date limite déclaration et régularisation prorata TVA : 25 mars → 20 mars.</p>
+                    <p><strong>Modification apportée :</strong> Alignement sur la déclaration mensuelle de février.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 56 — Création Art. 51 bis CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 51 bis (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 56 — Assujettis TVA enregistrant des opérations non facturées (art. 64) via logiciel ou caisse : obligation de fournir engagement de l'éditeur ou certificat d'organisme accrédité attestant inaltérabilité, sécurisation, conservation et archivage des données.</p>
+                    <p><strong>Modification apportée :</strong> Renforcement du contrôle fiscal sur les systèmes de caisse.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 57 — Modification Art. 114 CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 114</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 57 — Revalorisation amendes TVA : infraction de base 25 000 DA ; manœuvres frauduleuses 100 000 DA ; défaut plaque identification 10 000 DA ; infraction art. 61 (chantiers, sous-traitants) 50 000 DA.</p>
+                    <p><strong>Modification apportée :</strong> Adaptation à l'inflation ; effet dissuasif renforcé.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 58 — Modification Art. 137 CTCA</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 137</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 58 — Référence contrainte par corps : articles 597 et suivants ordonnance 66-155 → articles 759 et suivants code de procédure pénale (loi 25-14 du 3 août 2025).</p>
+                    <p><strong>Modification apportée :</strong> Mise à jour formelle suite au nouveau CPP.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 : CODE DES IMPÔTS INDIRECTS -->
+        <div class="section-title">
+            <h2><i class="fas fa-gem"></i> 3 — Code des Impôts Indirects (CII)</h2>
+        </div>
+        <div class="grid" data-section="cii">
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 59 — Modification Art. 359 CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 359</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 59 — Artisans bijoutiers explicitement mentionnés ; autorisation fiscale obligatoire pour artisans, fabricants, marchands et exportateurs ; retrait en cas de non-respect ; modalités par arrêté ministériel.</p>
+                    <p><strong>Modification apportée :</strong> Clarification cadre fiscal or, argent, platine ; lutte contre le blanchiment.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 60 — Création Art. 377 bis CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 377 bis (nouveau) — Section 3 Exportation temporaire</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 60 — Fabricants et artisans bijoutiers autorisés à exporter temporairement ouvrages or, argent, platine pour réimportation (en l'état ou après transformation à l'étranger). Autorisation préalable administration fiscale pour chaque opération.</p>
+                    <p><strong>Modification apportée :</strong> Encadrement exportation temporaire ; perfectionnement passif.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 61 — Création Art. 378 à 379 bis CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 378, 379, 379 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 61 — Section 1 Importation ouvrages titres légaux (378-379) ; Section 2 Importation temporaire (379 bis) : fabricants et artisans autorisés à importer temporairement pour réexportation (perfectionnement actif). Autorisation préalable par opération.</p>
+                    <p><strong>Modification apportée :</strong> Encadrement importation temporaire ; admission temporaire.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 62 — Création Titre VI bis Pierres précieuses</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 403 ter à 403 septies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 62 — Droit proportionnel 30 % sur pierres précieuses (perles, diamant, rubis, saphir, émeraude, gemmes) ; assiette : valeur HT ou douane ; payable à l'importation ou première vente. Autorisation ou agrément obligatoire ; déclaration profession ; registre coté et paraphé ; achat auprès de personnes connues.</p>
+                    <p><strong>Modification apportée :</strong> Nouveau régime pierres précieuses ; traçabilité ; lutte contre blanchiment.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 63 — Création Titre VI ter LBC-FT</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 403 octies à 403 duodecies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 63 — Marchands métaux et pierres précieuses désignés assujettis LBC-FT ; obligations législation anti-blanchiment ; conditions qualification professionnelle et intégrité (vérification listes ONU et liste nationale terroristes) ; registre clients paraphé ; suspension ou retrait agrément en cas de manquement.</p>
+                    <p><strong>Modification apportée :</strong> Harmonisation avec exigences anti-blanchiment.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 64 — Modification Art. 485 bis, sexies, septies CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 485 bis, 485 sexies, 485 septies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 64 — Adaptation à Sonelgaz Distribution (fusion des 4 sociétés concessionnaires en une seule). Référence unique à la société Sonelgaz Distribution.</p>
+                    <p><strong>Modification apportée :</strong> Mise à jour organisationnelle.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 65 — Modification Art. 523 CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 523</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 65 — Inobservation obligations art. 403 nonies (LBC-FT) : amende 50 000 DA par infraction.</p>
+                    <p><strong>Modification apportée :</strong> Sanction spécifique anti-blanchiment.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 66 — Création Art. 525 bis CII</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 525 bis (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 66 — Produits tabagiques manufacturés, alcools purs, boissons alcoolisées et vins saisis (commerce illicite, fabrication clandestine, contrefaçon) doivent être détruits. Modalités par arrêté conjoint Finances, Commerce intérieur, Environnement.</p>
+                    <p><strong>Modification apportée :</strong> Cadre légal pour destruction des produits illégaux saisis.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4 : CODE DES PROCÉDURES FISCALES -->
+        <div class="section-title">
+            <h2><i class="fas fa-gavel"></i> 4 — Code des Procédures Fiscales (CPF)</h2>
+        </div>
+        <div class="grid" data-section="cpf">
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 67 — Modification Art. 3 bis CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 3 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 67 — Nouveaux contribuables : déclaration définitive (art. 282 quater) et paiement IFU au plus tard le 20 janvier. Option régime bénéfice réel ou régime simplifié BNC (art. 183) désormais irrévocable.</p>
+                    <p><strong>Modification apportée :</strong> Élimination insécurité juridique ; stabilité du suivi administratif.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 68 — Modification Art. 19 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 19</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 68 — Actes de procédure et rôles notifiés et transmis à la dernière adresse communiquée par le contribuable au service gestionnaire.</p>
+                    <p><strong>Modification apportée :</strong> Responsabilité du contribuable quant à l'actualisation de ses coordonnées.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 69 — Modification Art. 20 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 20</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 69 — Présentation comptabilité analytique, états consolidés et comptes combinés aux vérificateurs ; notification à dernière adresse ; délai 30 jours pour répondre en cas de présomption transferts indirects de bénéfices (art. 189 CIDTA).</p>
+                    <p><strong>Modification apportée :</strong> Obligations documentaires renforcées.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 70 — Modification Art. 20 bis CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 20 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 70 — Délai 30 jours pour répondre aux demandes d'éclaircissements en cas de présomption transferts indirects ; prorogation 1 an en cas de demandes à administrations étrangères.</p>
+                    <p><strong>Modification apportée :</strong> Actualisation références ; cohérence procédures.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 71 — Création Art. 20 ter CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 20 ter (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 71 — Contrôle comptabilités informatisées : engagement éditeur logiciel (conformité, inaltérabilité, sécurisation, archivage) ; certificat pour systèmes de caisse (art. 51 bis CTCA) ; copies dématérialisées fichiers ; scellement copies pour contrôle inopiné ; choix mode traitement (vérificateur, contribuable, matériel) ; prorogation 30 jours vérification ; destruction copies en fin de contrôle (PV).</p>
+                    <p><strong>Modification apportée :</strong> Modernisation contrôle fiscal ; lutte contre fraude via logiciels.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 72 — Modification Art. 21 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 21</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 72 — VSFE : agents grade inspecteur minimum ; avis préalable ; délai préparation 30 jours ; durée max 1 an (prolongeable 2 ans) ; notification redressements détaillée ; délai réponse 40 jours ; arbitrage possible ; interdiction nouveau contrôle même période sauf fraude. Notification à dernière adresse.</p>
+                    <p><strong>Modification apportée :</strong> Renforcement contrôle revenus occultes ; garanties contribuable.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 73 — Modification Art. 38 quater CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 38 quater</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 73 — Contrôle évaluations droits enregistrement : agents inspecteur ; avis préalable 10 jours ; convocation ; visite sur place possible ; notification motivée ; délai réponse 30 jours (défaut = acceptation tacite) ; recours commission après notification définitive. Suppression passage par commission conciliation wilaya.</p>
+                    <p><strong>Modification apportée :</strong> Simplification recours ; transparence.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 74 — Abrogation Art. 38 quater A, B, D CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 38 quater A, B, D</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 74 — Abrogation complète : suppression commission conciliation wilaya (CCW) pour litiges évaluations et insuffisances de prix droits enregistrement.</p>
+                    <p><strong>Modification apportée :</strong> Contestations passent directement à procédure contentieuse classique.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 75 — Modification Art. 38 quater G CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 38 quater G</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 75 — Délai reprise 4 ans ; référence unique à art. 38 quater (suppression renvois 38 quater A-D).</p>
+                    <p><strong>Modification apportée :</strong> Harmonisation suite suppression CCW.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 76 — Modification Art. 38 quinquies CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 38 quinquies</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 76 — Droit préemption : délai 3 mois (au lieu d'1 an) à compter de l'enregistrement ; offre = prix déclaré + frais (sans majoration 10 %) ; exclusions : cessions organismes publics, culte, enchères publiques, ventes familiales (ascendants/descendants, conjoints, parents/alliés) ; notification par huissier ou LRAR par directeur impôts wilaya.</p>
+                    <p><strong>Modification apportée :</strong> Harmonisation avec art. 798 code civil ; sécurisation transactions.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 77 — Modification Art. 44 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 44</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 77 — Point 6 taxation d'office : renvoi à art. 20-10 (défaut présentation comptabilité lors vérification) au lieu de 20-9, sauf force majeure.</p>
+                    <p><strong>Modification apportée :</strong> Correction référence légale.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 78 — Création Art. 51 sexies CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 51 sexies (nouveau)</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 78 — Éditeurs logiciels comptabilité, gestion, caisse (ou intervenants techniques) : obligation de présenter à l'administration fiscale, sur demande, tous codes, données, traitements ou documentation.</p>
+                    <p><strong>Modification apportée :</strong> Renforcement droit de communication ; lutte contre fraude logiciels.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 79 — Modification Art. 64 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 64</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 79 — Conservation : livres et pièces 10 ans (alignement art. 12 code commerce) ; données et traitements informatiques (art. 20 ter.3-A) 6 ans sur support informatique.</p>
+                    <p><strong>Modification apportée :</strong> Cohérence avec code commerce ; contrôle comptabilités informatisées.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 80 — Modification Art. 70 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 70</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 80 — Réclamations droits enregistrement et TPF : recours préalable obligatoire (amiable ou commission) avant contentieux. Autres impôts : recours contentieux direct possible.</p>
+                    <p><strong>Modification apportée :</strong> Renforcement garanties contribuables ; résolution plus rapide.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 81 — Modification Art. 72 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 72</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 81 — Nouveau 7° : réclamation contestation décision remboursement excédent de versement : au plus tard le 31 décembre de la 2e année suivant notification de la décision contestée.</p>
+                    <p><strong>Modification apportée :</strong> Délai clair pour recours sur remboursements excédents.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 82 — Modification Art. 81 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 81</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 82 — Commission recours wilaya : compétence pour contestations droits enregistrement issus régularisations ou tendant à obtenir un droit législatif/réglementaire.</p>
+                    <p><strong>Modification apportée :</strong> Instance dédiée droits enregistrement.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 83 — Modification Art. 81 bis CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 81 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 83 — Nouvelle commission recours wilaya droits enregistrement (composition pluridisciplinaire) ; obligation retrait conflit d'intérêts pour conseillers fiscaux ; référence « ministère hydrocarbures » ; seuils : wilaya ≤ 20 MD, régionale > 20 et ≤ 70 MD, centrale > 70 MD.</p>
+                    <p><strong>Modification apportée :</strong> Uniformisation recours amiable ; évitement conflits d'intérêts.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 84 — Modification Art. 82 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 82</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 84 — Suppression saisine directe tribunal administratif pour droits enregistrement ; obligation d'épuiser voie administrative (commission) avant contentieux.</p>
+                    <p><strong>Modification apportée :</strong> Caractère préalable recours administratif renforcé.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 85 — Modification Art. 87 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 87</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 85 — Correction : réinsertion « doit être formulée » dans l'alinéa 2 (intervention tiers en matière d'impôts et amendes fiscales avant jugement).</p>
+                    <p><strong>Modification apportée :</strong> Rectification rédactionnelle.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 86 — Modification Art. 104 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 104</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 86 — Poursuites pénales : suppression obligation plainte préalable pour affaires pôle pénal national économique et financier ; administration peut se constituer partie civile ; pour infractions indirectes, timbre et enquêtes judiciaires : avis conforme commission régionale non requis.</p>
+                    <p><strong>Modification apportée :</strong> Adaptation nouveau CPP (loi 25-14) ; facilitation lutte criminalité économique.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 87 — Modification Art. 104 bis CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 104 bis</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 87 — Référence retrait plainte éteint action publique : art. 6 → art. 9 nouveau code procédure pénale.</p>
+                    <p><strong>Modification apportée :</strong> Mise à jour référence légale.</p>
+                <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
+                </div>
+            </div>
+            <div class="card cadre" onclick="openModal(this)">
+                <div class="card-header"><div class="card-title">Art. 88 — Modification Art. 173 CPF</div><div class="card-meta">LF 2026</div></div>
+                <div class="card-body">
+                    <p><strong>Article du code :</strong> Art. 173</p>
+                    <p><strong>Article LF 2026 :</strong> Art. 88 — Personnes morales DGE : peuvent bénéficier SLP (art. 74) en constituant garanties (en plus du paiement 20 % droits et pénalités) lors recours commission centrale.</p>
+                    <p><strong>Modification apportée :</strong> Égalité de traitement ; options élargies pour grandes entreprises.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-bar">
+            <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Imprimer</button>
+            <button class="btn btn-success" onclick="exportCSV()"><i class="fas fa-download"></i> Exporter CSV</button>
+        </div>
+    </div>
+
+    <!-- Modal popup pour ouvrir les articles -->
+    <div id="articleModal" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="modal-badges"><span class="badge" id="modalBadge">LF 2026</span></div>
+                <button class="modal-close" onclick="closeModal()" title="Fermer">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn btn-print" onclick="printFromModal()"><i class="fas fa-print"></i> Imprimer cet article</button>
+                <button class="btn btn-primary" onclick="closeModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Import Algérie • Référentiel Fiscal 2026 • <a href="https://www.mfdgi.gov.dz" target="_blank">DGI</a> • <a href="https://www.douane.gov.dz" target="_blank">Douanes</a></p>
+    </footer>
+
+    <script>
+        let currentModalCard = null;
+
+        function openModal(card) {
+            if (!card || !card.classList.contains('card')) return;
+            currentModalCard = card;
+            const title = card.querySelector('.card-title')?.textContent || '';
+            const badge = card.closest('.grid')?.dataset?.section?.toUpperCase() || 'LF 2026';
+            const body = card.querySelector('.card-body');
+            const ps = body?.querySelectorAll('p') || [];
+
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBadge').textContent = badge;
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = '';
+            ps.forEach(p => {
+                const section = document.createElement('div');
+                section.className = 'section-block';
+                const strong = p.querySelector('strong');
+                if (strong) {
+                    const label = strong.textContent.replace(/\s*:\s*$/, '').trim();
+                    const rest = p.innerHTML.substring(p.innerHTML.indexOf('</strong>') + 9).trim();
+                    section.innerHTML = `<h4>${label}</h4><p>${rest}</p>`;
+                } else {
+                    section.innerHTML = `<p>${p.innerHTML}</p>`;
+                }
+                modalBody.appendChild(section);
+            });
+            document.getElementById('articleModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('articleModal').classList.remove('active');
+            document.body.style.overflow = '';
+            currentModalCard = null;
+        }
+
+        function printArticle(btn) {
+            const card = btn?.closest?.('.card');
+            if (card) printCard(card);
+        }
+
+        function printFromModal() {
+            if (currentModalCard) printCard(currentModalCard);
+        }
+
+        function printCard(card) {
+            const title = card.querySelector('.card-title')?.textContent || '';
+            const body = card.querySelector('.card-body');
+            const ps = body?.querySelectorAll('p') || [];
+            let html = '<html><head><title>LF 2026 - ' + title.replace(/"/g, '&quot;') + '</title><style>body{font-family:Segoe UI,sans-serif;padding:2rem;max-width:680px;margin:0 auto;line-height:1.6;color:#333;} h2{color:#0d5c91;margin-bottom:1.5rem;font-size:1.25rem;} .block{margin:1rem 0;} .block strong{color:#0d5c91;}</style></head><body><h2>' + title + '</h2>';
+            ps.forEach(p => { html += '<div class="block">' + p.innerHTML + '</div>'; });
+            html += '</body></html>';
+            const w = window.open('', '_blank');
+            w.document.write(html);
+            w.document.close();
+            w.focus();
+            setTimeout(() => { w.print(); w.close(); }, 250);
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        function filterCards(value) {
+            const cards = document.querySelectorAll('.card');
+            const cat = document.querySelector('.filter.active')?.dataset.cat || 'all';
+            const sections = document.querySelectorAll('.section-title');
+            cards.forEach(card => {
+                const cardCat = card.dataset.cat || card.closest('.grid')?.dataset?.section || '';
+                const matchSearch = !value || card.textContent.toLowerCase().includes(value.toLowerCase());
+                const matchCat = cat === 'all' || cardCat === cat;
+                card.style.display = (matchSearch && matchCat) ? '' : 'none';
+            });
+            sections.forEach(st => {
+                const nextGrid = st.nextElementSibling;
+                const visibleCards = nextGrid ? Array.from(nextGrid.querySelectorAll('.card')).some(c => c.style.display !== 'none') : false;
+                st.style.display = visibleCards ? '' : 'none';
+                if (nextGrid) nextGrid.style.display = st.style.display;
+            });
+        }
+        document.querySelectorAll('.filter').forEach(f => {
+            f.onclick = () => {
+                document.querySelector('.filter.active')?.classList.remove('active');
+                f.classList.add('active');
+                filterCards(document.querySelector('.search').value);
+            };
+        });
+        document.addEventListener('DOMContentLoaded', () => filterCards(''));
+
+        function exportCSV() {
+            let csv = 'Code;Titre;Article du code;Extrait LF 2026;Modification\n';
+            document.querySelectorAll('.card.cadre').forEach(card => {
+                const title = card.querySelector('.card-title')?.textContent?.trim() || '';
+                const body = card.querySelector('.card-body');
+                const arts = body?.querySelectorAll('p');
+                let artCode = '', artLF = '', modif = '';
+                arts?.forEach(p => {
+                    const t = p.textContent || '';
+                    if (t.startsWith('Article du code')) artCode = t.replace('Article du code :', '').trim();
+                    else if (t.startsWith('Article LF 2026')) artLF = t.replace('Article LF 2026 :', '').trim();
+                    else if (t.startsWith('Modification')) modif = t.replace('Modification apportée :', '').trim();
+                });
+                const cat = card.dataset.cat || card.closest('.grid')?.dataset?.section || '';
+                csv += `"${cat}";"${title}";"${artCode.replace(/"/g, '""')}";"${artLF.replace(/"/g, '""')}";"${modif.replace(/"/g, '""')}"\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Import_Algerie_LF2026_Complet.csv';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+    </script>
+</body>
+</html>
