@@ -1166,159 +1166,296 @@
   }
 </script>
 
-<!-- Section de confirmation légale -->
-<div class="legal-confirmation" id="legalConfirmation">
-  <div class="legal-content">
-    <h3><i class="fas fa-balance-scale"> Confirmation de lecture des articles de loi</h3>
-    <div class="legal-text">
-      <p>En utilisant ce site, vous confirmez avoir pris connaissance des articles de loi référencés, disponibles sur le Journal Officiel de la République Algérienne :</p>
-      <ul>
-        <li><a href="https://www.joradp.dz" target="_blank">www.joradp.dz</a> - Journal Officiel de la République Algérienne</li>
-      </ul>
-      <p>Je reconnais avoir pris connaissance des articles de loi référencés et j'accepte les conditions d'utilisation.</p>
-    </div>
-    <div class="confirmation-actions">
-      <button class="btn btn-primary" onclick="acceptLegal()">Je confirme avoir pris connaissance</button>
-      <button class="btn btn-outline" onclick="declineLegal()">Refuser</button>
+<!-- 🇩🇿 MODAL DGI ALGÉRIE - CORRIGÉE & PROFESSIONNELLE -->
+<div class="dgi-modal" id="legalConfirmation">
+    <div class="dgi-overlay"></div>
+    
+    <div class="dgi-container">
+      <!-- Header -->
+      <div class="dgi-header">
+        <div class="dgi-logo">
+          🇩🇿 <i class="fas fa-building-columns"></i>
+        </div>
+        <div class="header-text">
+          <h2>Direction Générale des Impôts</h2>
+          <p>Référentiel Loi de Finances 2026</p>
+        </div>
+        <button class="close-btn" onclick="closeDgiModal()" title="Fermer">×</button>
+      </div>
+  
+      <!-- Contenu -->
+      <div class="dgi-content">
+        <div class="notice">
+          <i class="fas fa-file-contract"></i>
+          <h3>Confirmation de Lecture</h3>
+          <p>Avant accès aux articles fiscaux officiels</p>
+        </div>
+  
+        <!-- Sources -->
+        <div class="sources">
+          <a href="https://www.joradp.dz" target="_blank" class="source joradp" title="Journal Officiel">
+            <i class="fas fa-newspaper"></i>
+            <span>JORADP</span>
+          </a>
+          <a href="https://www.mfdgi.gov.dz" target="_blank" class="source dgi" title="Site DGI">
+            <i class="fas fa-globe"></i>
+            <span>DGI Officiel</span>
+          </a>
+        </div>
+  
+        <!-- Checkbox -->
+        <label class="confirm-box">
+          <input type="checkbox" id="dgiConfirm">
+          <span class="checkmark"></span>
+          <span>J'ai lu les articles Loi de Finances 2026</span>
+        </label>
+  
+        <!-- Boutons -->
+        <div class="actions">
+          <button class="btn-main" id="accessBtn" onclick="acceptDgi()" disabled>
+            <i class="fas fa-check"></i> ACCÉDER
+          </button>
+          <button class="btn-secondary" onclick="goJoradp()">
+            JORADP
+          </button>
+        </div>
+      </div>
+  
+      <!-- Footer -->
+      <div class="dgi-footer">
+        Direction Générale des Impôts • 31 Janvier 2026
+      </div>
     </div>
   </div>
-</div>
-
-<style>
-  .legal-confirmation {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.9);
-      color: white;
-      padding: 1.5rem;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      display: none;
+  
+  <style>
+  /* 🎨 COULEURS ALGÉRIENES OFFICIELLES */
+  :root {
+    --dz-vert: #006a4e; --dz-blanc: #ffffff; --dz-rouge: #ce1126;
+    --dz-or: #f2a340; --dz-bleu: #0f4c75; --dz-gris: #6c757d;
   }
-  .legal-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
+  
+  /* MODAL CORRIGÉE */
+  .dgi-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    z-index: 10000; display: flex; align-items: center; justify-content: center;
+    padding: 1rem; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: rgba(0,0,0,0.5);
   }
-  .legal-confirmation h3 {
-      margin-top: 0;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+  
+  /* Overlay drapeau algérien */
+  .dgi-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--dz-vert) 0%, var(--dz-blanc) 50%, var(--dz-rouge) 100%);
+    opacity: 0.96; z-index: 1;
   }
-  .legal-text {
-      margin: 1rem 0;
-      line-height: 1.6;
+  
+  /* Conteneur principal */
+  .dgi-container {
+    background: var(--dz-blanc); width: 100%; max-width: 480px; max-height: 90vh;
+    border-radius: 20px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+    position: relative; z-index: 2; animation: slideUp 0.4s ease-out;
+    display: flex; flex-direction: column;
   }
-  .legal-text a {
-      color: var(--accent);
-      text-decoration: none;
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  .legal-text a:hover {
-      text-decoration: underline;
+  
+  /* Header DGI */
+  .dgi-header {
+    background: linear-gradient(135deg, var(--dz-bleu), #1e5799);
+    color: white; padding: 1.5rem 2rem; display: flex; align-items: center;
+    gap: 1rem; flex-shrink: 0;
   }
-  .confirmation-actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+  .dgi-logo {
+    font-size: 1.8rem; padding: 0.8rem; background: rgba(255,255,255,0.2);
+    border-radius: 16px; display: flex; align-items: center; gap: 0.3rem;
   }
-  .btn-outline {
-      background: transparent;
-      border: 1px solid white;
-      color: white;
+  .header-text {
+    flex: 1; margin: 0;
   }
-  .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
+  .header-text h2 {
+    margin: 0 0 0.2rem 0; font-size: 1.35rem; font-weight: 700; line-height: 1.3;
   }
-
-  /* Style pour la section de référence légale */
-  .legal-reference {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      background-color: #f8f9fa;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 4px 4px 0;
-      font-size: 0.85rem;
-      color: #555;
+  .header-text p {
+    margin: 0; font-size: 0.92rem; opacity: 0.9;
   }
-  .legal-reference h4 {
-      margin: 0 0 0.5rem 0;
-      color: var(--primary);
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+  .close-btn {
+    background: none; border: none; color: rgba(255,255,255,0.8);
+    font-size: 1.8rem; cursor: pointer; padding: 0.5rem;
+    border-radius: 50%; width: 44px; height: 44px; display: flex;
+    align-items: center; justify-content: center; transition: all 0.3s;
+    margin-left: auto;
   }
-  .legal-reference ul {
-      margin: 0.5rem 0 0 1rem;
-      padding: 0;
+  .close-btn:hover {
+    background: rgba(255,255,255,0.2); color: white;
   }
-  .legal-reference li {
-      margin-bottom: 0.25rem;
+  
+  /* Contenu principal */
+  .dgi-content {
+    padding: 2rem; flex: 1; display: flex; flex-direction: column;
+    text-align: center; overflow-y: auto;
   }
-  .legal-reference a {
-      color: var(--accent);
-      text-decoration: none;
+  .notice {
+    margin-bottom: 1.8rem;
   }
-  .legal-reference a:hover {
-      text-decoration: underline;
+  .notice i {
+    font-size: 2.8rem; color: var(--dz-or); display: block; margin-bottom: 0.8rem;
   }
-</style>
-
-<script>
-  // Afficher la confirmation légale au chargement de la page
-  // Fonction pour ajouter la section de référence légale à chaque article
-  function addLegalReferenceToArticles() {
-      const articles = document.querySelectorAll('.card .card-body');
-      articles.forEach(article => {
-          // Vérifier si la référence légale n'existe pas déjà
-          if (!article.querySelector('.legal-reference')) {
-              const legalRef = document.createElement('div');
-              legalRef.className = 'legal-reference';
-              legalRef.innerHTML = `
-                  <h4><i class="fas fa-balance-scale"></i> Référence légale</h4>
-                  <ul>
-                      <li>Source : Journal Officiel de la République Algérienne (JORA)</li>
-                      <li>Loi de Finances 2026</li>
-                      <li>Consultable sur : <a href="https://www.joradp.dz" target="_blank">www.joradp.dz</a></li>
-                  </ul>
-              `;
-              // Insérer avant les actions de la carte
-              const actions = article.querySelector('.card-actions');
-              if (actions) {
-                  article.insertBefore(legalRef, actions);
-              } else {
-                  article.appendChild(legalRef);
-              }
-          }
-      });
+  .notice h3 {
+    color: var(--dz-bleu); font-size: 1.25rem; margin: 0.5rem 0; font-weight: 700;
   }
-
+  .notice p {
+    color: #666; margin: 0; font-size: 1rem;
+  }
+  
+  /* Sources officielles */
+  .sources {
+    display: flex; justify-content: center; gap: 1.2rem; margin: 1.8rem 0;
+    flex-wrap: wrap;
+  }
+  .source {
+    display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    padding: 1.2rem 1.6rem; background: rgba(255,255,255,0.8);
+    border-radius: 16px; border: 3px solid transparent; cursor: pointer;
+    transition: all 0.3s ease; text-decoration: none; min-width: 110px;
+    color: inherit;
+  }
+  .source:hover {
+    border-color: var(--dz-vert); transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,106,78,0.25);
+  }
+  .source.joradp { border-left-color: var(--dz-rouge); }
+  .source.dgi { border-left-color: var(--dz-bleu); }
+  .source i {
+    font-size: 2rem; color: var(--dz-bleu); margin-bottom: 0.3rem;
+  }
+  .source span {
+    font-weight: 700; font-size: 0.95rem; color: var(--dz-bleu);
+  }
+  
+  /* Checkbox corrigée */
+  .confirm-box {
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    margin: 2.5rem 0; padding: 1.5rem; background: linear-gradient(135deg, #f8fff8, #e8f5e8);
+    border: 2px solid transparent; border-radius: 16px; cursor: pointer;
+    transition: all 0.3s; font-size: 1.05rem; font-weight: 500;
+  }
+  .confirm-box:hover { border-color: var(--dz-vert); box-shadow: 0 5px 20px rgba(0,106,78,0.15); }
+  .confirm-box input {
+    display: none;
+  }
+  .checkmark {
+    width: 24px; height: 24px; border: 2px solid var(--dz-vert);
+    border-radius: 6px; position: relative; flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .confirm-box input:checked + .checkmark {
+    background: var(--dz-vert); border-color: var(--dz-vert);
+  }
+  .confirm-box input:checked + .checkmark::after {
+    content: '✓'; color: white; font-weight: bold; font-size: 15px;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .confirm-box > span:last-child {
+    color: var(--dz-bleu); flex: 1;
+  }
+  
+  /* Boutons */
+  .actions {
+    display: flex; gap: 1.2rem; justify-content: center; margin-top: auto;
+    flex-wrap: wrap; padding-top: 1rem;
+  }
+  .btn-main, .btn-secondary {
+    padding: 1.1rem 2.2rem; border: none; border-radius: 14px;
+    font-weight: 700; cursor: pointer; transition: all 0.3s;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    font-size: 1rem;
+  }
+  .btn-main {
+    background: linear-gradient(135deg, var(--dz-vert), #008a60);
+    color: white; min-width: 170px;
+  }
+  .btn-main:not(:disabled):hover {
+    transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,106,78,0.4);
+  }
+  .btn-main:disabled {
+    opacity: 0.6; cursor: not-allowed; transform: none;
+  }
+  .btn-secondary {
+    background: var(--dz-gris); color: white; padding: 1.1rem 1.8rem;
+  }
+  .btn-secondary:hover {
+    background: #5a6268; transform: translateY(-2px);
+  }
+  
+  /* Footer */
+  .dgi-footer {
+    background: var(--dz-bleu); color: white; padding: 1.2rem 2rem;
+    text-align: center; font-size: 0.95rem; opacity: 0.95; flex-shrink: 0;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 520px) {
+    .dgi-modal { padding: 0.5rem; }
+    .dgi-container { margin: 0.5rem; max-width: none; }
+    .sources { gap: 1rem; }
+    .actions { flex-direction: column; }
+    .btn-main, .btn-secondary { width: 100%; max-width: 280px; }
+  }
+  </style>
+  
+  <script>
+  // ✅ LOGIQUE DGI CORRIGÉE
   document.addEventListener('DOMContentLoaded', function() {
-      // Vérifier si l'utilisateur a déjà accepté
-      if (!localStorage.getItem('legalAccepted')) {
-          document.getElementById('legalConfirmation').style.display = 'block';
-      }
-
-      // Ajouter les références légales aux articles
-      addLegalReferenceToArticles();
+    const modal = document.getElementById('legalConfirmation');
+    const checkbox = document.getElementById('dgiConfirm');
+    const btn = document.getElementById('accessBtn');
+    
+    // Vérifier consentement (1 an)
+    const consent = localStorage.getItem('dgiConsent');
+    const consentDate = consent ? new Date(consent) : null;
+    const isValid = consentDate && (Date.now() - consentDate.getTime()) < 365*24*60*60*1000;
+    
+    if (!isValid) {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Bloquer scroll
+    }
+    
+    // Activer bouton
+    checkbox.addEventListener('change', function() {
+      btn.disabled = !this.checked;
+    });
+    
+    // Clic overlay = fermer
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeDgiModal();
+    });
   });
-
-  function acceptLegal() {
-      localStorage.setItem('legalAccepted', 'true');
-      document.getElementById('legalConfirmation').style.display = 'none';
+  
+  function acceptDgi() {
+    localStorage.setItem('dgiConsent', new Date().toISOString());
+    document.getElementById('legalConfirmation').style.display = 'none';
+    document.body.style.overflow = ''; // Retour scroll
+    
+    // Lancer dashboard
+    if (typeof initDashboard === 'function') initDashboard();
   }
-
-  function declineLegal() {
-      if (confirm('Pour continuer à utiliser ce site, vous devez accepter les conditions. Souhaitez-vous vraiment refuser ?')) {
-          // Rediriger vers une page d'information ou fermer l'onglet
-          window.location.href = 'https://www.joradp.dz';
-      }
+  
+  function closeDgiModal() {
+    window.location.reload();
   }
-</script>
+  
+  function goJoradp() {
+    window.open('https://www.joradp.dz', '_blank');
+    acceptDgi(); // Accès direct via JORADP
+  }
+  </script>
+  
+  
+
 </body>
 </html>
 
