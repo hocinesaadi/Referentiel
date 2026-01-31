@@ -209,7 +209,10 @@
     }
     .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
     .card-meta { font-size: 0.88rem; opacity: 0.95; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-    .card-body { padding: 1.5rem; position: relative; }
+        .card-body { padding: 1.5rem; position: relative; max-height: 280px; overflow-y: auto; }
+        .card-body::-webkit-scrollbar { width: 6px; }
+        .card-body::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+        .card-body::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
     .card-actions {
         display: flex;
         gap: 0.5rem;
@@ -268,11 +271,14 @@
     .modal-box .modal-header h2 { font-size: 1.35rem; font-weight: 700; flex: 1; padding-right: 3rem; }
     .modal-box .modal-header .modal-badges { display: flex; gap: 0.5rem; align-items: center; }
     .modal-box .modal-header .badge { background: rgba(255,255,255,0.25); padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; }
-    .modal-box .modal-body {
-        padding: 2rem;
-        max-height: 60vh;
-        overflow-y: auto;
-    }
+        .modal-box .modal-body {
+            padding: 2rem;
+            max-height: 65vh;
+            overflow-y: auto;
+        }
+        .modal-box .modal-body::-webkit-scrollbar { width: 8px; }
+        .modal-box .modal-body::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .modal-box .modal-body::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
     .modal-box .modal-body .section-block { margin-bottom: 1.5rem; }
     .modal-box .modal-body .section-block h4 {
         color: var(--primary);
@@ -469,7 +475,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 104</p>
         <p><strong>Article LF 2026 :</strong> Art. 11 — Le taux de la retenue à la source applicable aux produits des actions ou parts sociales et revenus assimilés est fixé à 10 % libératoire d'impôt (au lieu de 15 %).</p>
-        <p><strong>Modification apportée :</strong> Réduction du taux de 15 % à 10 % pour les dividendes perçus par les personnes physiques résidentes fiscales en Algérie. Objectif : favoriser l'épargne et le financement de l'économie.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 104 du Code des impôts directs et taxes assimilées (CIDTA), introduite par la Loi de finances pour 2026, consiste en une réduction du taux de la retenue à la source libératoire d'impôt applicable aux produits des actions ou parts sociales et revenus assimilés (dividendes) perçus par les personnes physiques résidentes fiscales en Algérie. Ce taux, précédemment fixé à 15 %, est ramené à 10 %. Cette mesure vise à atténuer les effets défavorables observés sur l'épargne et la mobilisation des capitaux, tout en favorisant le financement de l'économie nationale et la création d'entreprises.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -478,7 +484,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 140</p>
         <p><strong>Article LF 2026 :</strong> Art. 12 — Nouveau 5° : Le bénéfice imposable des entreprises non résidentes intervenant en Algérie dans le cadre d'un seul contrat (fourniture de services, livraison d'équipements, réalisation de travaux) doit comprendre l'ensemble des bénéfices réalisés en Algérie, y compris ceux relatifs à la fourniture des équipements, même facturés séparément et/ou dédouanés au nom de la partie contractante.</p>
-        <p><strong>Modification apportée :</strong> Base imposable à l'IBS ou IRG incluant tous les bénéfices réalisés en Algérie pour les contrats clé en main ou EPC. Lutte contre la planification fiscale agressive.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 140 du code des impôts directs et taxes assimilées (par l'article 12 de la loi de finances pour 2026) précise que, pour les entreprises étrangères non résidentes exerçant en Algérie via un établissement stable dans le cadre d'un contrat unique « clé en main » ou EPC (fourniture de services, livraison d'équipements et réalisation de travaux), la base imposable à l'IBS ou à l'IRG doit inclure l'ensemble des bénéfices réalisés en Algérie, y compris ceux relatifs à la fourniture des équipements, même s'ils sont facturés séparément par le siège ou dédouanés au nom du cocontractant algérien. Cette mesure vise à assurer l'égalité de traitement fiscal entre les entreprises étrangères et nationales, à lutter contre les pratiques de planification fiscale agressive et à préserver les intérêts du Trésor public, tout en apportant plus de clarté à la législation fiscale.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -492,7 +498,7 @@
         </p>
         <p>
           <strong>Modification apportée :</strong>
-          La modification introduite par l'article 13 crée un nouvel article 153<sup>ter</sup> dans le code des impôts directs et taxes assimilées (CIDTA). Celui-ci précise explicitement que les entreprises non résidentes qui opèrent en Algérie via un établissement stable (ou toute autre installation professionnelle au sens fiscal) sont soumises aux mêmes obligations fiscales que les personnes morales algériennes imposées sous le régime du bénéfice réel (article 148 du CIDTA), ainsi qu'à l'obligation spécifique de transmettre une copie de leurs contrats (et avenants) au service fiscal compétent (article 161-1). Cette mesure vise à clarifier et renforcer la transparence des règles applicables à ces entités étrangères.
+          La modification introduite par l'article 13 crée un nouvel article 153 ter dans le code des impôts directs et taxes assimilées (CIDTA). Celui-ci précise explicitement que les entreprises non résidentes qui opèrent en Algérie via un établissement stable (ou toute autre installation professionnelle au sens fiscal) sont soumises aux mêmes obligations fiscales que les personnes morales algériennes imposées sous le régime du bénéfice réel (article 148 du CIDTA), ainsi qu'à l'obligation spécifique de transmettre une copie de leurs contrats (et avenants) au service fiscal compétent (article 161-1). Cette mesure vise à clarifier et renforcer la transparence des règles applicables à ces entités étrangères.
         </p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
@@ -502,7 +508,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 156 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 14 — Abrogation complète de l'article 156 bis.</p>
-        <p><strong>Modification apportée :</strong> Suppression de la possibilité pour les entreprises étrangères sans installation permanente de choisir l'imposition sur bénéfice réel. Désormais obligatoirement imposées par retenue à la source sur base brute.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 14 de la loi de finances (2026) consiste en l'abrogation complète de l'article 156 bis du code des impôts directs et taxes assimilées. Auparavant, les entreprises étrangères sans installation professionnelle permanente en Algérie pouvaient choisir d'être imposées sur leur bénéfice réel (art. 148) au lieu du régime de la retenue à la source (art. 156). Cette option se faisait par contrat dans les 30 jours suivant sa signature. Désormais, cette possibilité est supprimée : ces entreprises sont obligatoirement imposées par retenue à la source sur une base brute (sans déduction de charges), ce qui simplifie la gestion fiscale, évite les dualités de régimes pour une même entreprise et permet de mieux lutter contre l'érosion de la base imposable, tout en augmentant les recettes pour le Trésor public.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -511,7 +517,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 161</p>
         <p><strong>Article LF 2026 :</strong> Art. 15 — Suppression de l'obligation de notification par l'administration ; extension à tout nouveau contrat ; obligation de notification des avenants, modifications ou résiliations dans les 10 jours ; amende art. 194-5 pour défaut de tenue du livre comptable.</p>
-        <p><strong>Modification apportée :</strong> Renforcement du contrôle fiscal sur les entreprises étrangères. Traçabilité des contrats et opérations.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 161 du Code des impôts directs et taxes assimilées (CIDTA), introduite par la Loi de Finances 2026, vise à renforcer le contrôle fiscal sur les entreprises étrangères exerçant une activité temporaire en Algérie sans installation permanente. Elle supprime l'obligation pour l'administration fiscale de notifier aux entreprises leurs obligations (car la législation est déjà claire et vulgarisée), étend l'obligation de notification à tout nouveau contrat, ainsi qu'à toute résiliation ou modification (dans les 10 jours), et applique désormais l'amende de l'article 194-5 également au défaut de tenue du livre comptable coté et paraphé (achats, recettes, salaires, locations, etc.). Ces changements visent à améliorer la traçabilité des contrats et des opérations pour mieux déterminer le régime fiscal applicable, notamment la retenue à la source.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -520,7 +526,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 169</p>
         <p><strong>Article LF 2026 :</strong> Art. 16 — Nouveau 6° : Ne sont pas admises en déduction les sommes versées par l'établissement stable au siège central (redevances, honoraires, commissions, intérêts sur prêts), sauf remboursements de frais réels.</p>
-        <p><strong>Modification apportée :</strong> Interdiction de déduction des paiements internes (redevances, honoraires, commissions, intérêts) versés par l'établissement stable au siège. Alignement sur le modèle ONU.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 169 du Code des impôts directs et taxes assimilées (via l'article 16 de la loi de finances concernée) vise principalement les établissements stables ou installations professionnelles en Algérie appartenant à des entreprises non résidentes. Elle introduit un nouveau point 6 qui interdit la déduction fiscale des paiements (redevances, honoraires, commissions, intérêts sur prêts, etc.) versés par cet établissement stable au siège central ou à d'autres bureaux de la même entreprise, sauf s'il s'agit de remboursements de frais réels. Cette mesure aligne le droit interne algérien sur les conventions fiscales internationales (notamment le modèle ONU) et empêche la déduction de charges « internes » ou notionnelles au sein d'une même entité juridique, tout en préservant la déductibilité des dépenses réellement payées à des tiers.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -529,7 +535,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 192</p>
         <p><strong>Article LF 2026 :</strong> Art. 17 — Suppression du 3e alinéa du paragraphe 2 (référence aux art. 44, 53, 59) ; renvoi explicite à l'article 322 ou au 4e paragraphe pour les sanctions.</p>
-        <p><strong>Modification apportée :</strong> Clarification et harmonisation des pénalités applicables.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 192 du code des impôts directs et taxes assimilées (CIDTA) vise principalement à adapter les sanctions en cas de non-production ou de retard de certaines déclarations et documents. Elle supprime le troisième alinéa du paragraphe 2 (qui faisait référence aux articles 44, 53 et 59, désormais abrogés ou obsolètes) et précise que les sanctions pour retard ou défaut de souscription des déclarations spéciales (notamment celle prévue à l'article 18) sont renvoyées explicitement à l'article 322 ou au quatrième paragraphe de l'article 192. Cela clarifie et harmonise les pénalités applicables, tout en maintenant les majorations existantes (comme 25 % pour taxation d'office, 35 % après mise en demeure, ou l'amende de 15 millions DA pour la déclaration des prix de transfert).</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -538,7 +544,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 196 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 18 — Obligation de consacrer 1 % de la masse salariale brute semestrielle à la formation professionnelle continue et 1 % à l'apprentissage et/ou stages des étudiants. Si non respecté : taxes correspondantes.</p>
-        <p><strong>Modification apportée :</strong> Deux obligations distinctes (formation continue et apprentissage/stages) avec calcul semestriel.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 196 bis (via l'article 18 de la Loi de Finances 2026) rend le dispositif plus clair et structuré : désormais, les employeurs privés en Algérie (hors administrations et institutions publiques) doivent obligatoirement consacrer 1 % de la masse salariale brute semestrielle à la formation professionnelle continue de leur personnel et 1 % supplémentaire de cette même masse aux actions d'apprentissage et/ou aux stages en milieu professionnel des étudiants. Si ces montants minimums ne sont pas respectés, ils restent soumis aux taxes correspondantes. Cette version précise les deux obligations distinctes (formation continue et apprentissage/stages) avec un calcul semestriel, contrairement à une formulation antérieure potentiellement moins détaillée.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -547,7 +553,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 196 quater</p>
         <p><strong>Article LF 2026 :</strong> Art. 19 — L'assiette des taxes de formation et d'apprentissage est constituée de la masse salariale brute semestrielle (rémunérations brutes versées durant le semestre, avant déduction des cotisations sociales, retraites et IRG/salaires).</p>
-        <p><strong>Modification apportée :</strong> Passage du calcul annuel au calcul semestriel.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 196 quater du code des impôts directs et taxes assimilées (via la loi de finances, probablement 2026) change le mode de calcul de l'assiette des taxes de formation professionnelle continue et d'apprentissage. Auparavant, l'assiette était basée sur la masse salariale annuelle. Désormais, elle est calculée sur la masse salariale brute semestrielle (rémunérations brutes versées aux employés pendant le semestre, avant déduction des cotisations sociales, retraites et IRG/salaires). Les employeurs doivent consacrer au minimum 1 % de cette masse semestrielle à la formation continue et 1 % à l'apprentissage/stages, sous peine de payer la taxe correspondante.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -556,7 +562,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 196 quinquies</p>
         <p><strong>Article LF 2026 :</strong> Art. 20 — Taux = différence entre 1 % et le ratio dépenses éligibles / masse salariale semestrielle brute. Définition des dépenses de formation et d'apprentissage. Possibilité d'affecter le différentiel apprentissage vers la formation si justifié.</p>
-        <p><strong>Modification apportée :</strong> Calcul semestriel ; possibilité de réaffectation du manque en apprentissage vers la formation professionnelle.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 196 quinquies du code des impôts directs (par la loi de finances 2026 en Algérie) passe d'un calcul annuel à un calcul semestriel pour la taxe de formation professionnelle et la taxe d'apprentissage. Le taux de chaque taxe est désormais la différence entre 1 % de la masse salariale brute semestrielle et le pourcentage réel des dépenses éligibles (formation, transport, hébergement, etc., ou apprentissage/stages incluant primes, présalaires, outils, etc.) réalisées sur ce même semestre. Cela rend le dispositif plus périodique et précis, avec possibilité de réaffecter le manque en apprentissage vers la formation professionnelle si justifiée.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -565,7 +571,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 196 sexies</p>
         <p><strong>Article LF 2026 :</strong> Art. 21 — Déclaration et paiement semestriels au plus tard le 20 du mois suivant le semestre. Déclaration obligatoire même si aucun montant n'est dû.</p>
-        <p><strong>Modification apportée :</strong> Passage de l'annuel au semestriel pour TFPC et TAPP.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 21 de la Loi de Finances 2026 à l'article 196 sexies du Code des impôts directs consiste à passer d'une déclaration et d'un paiement annuels (au plus tard le 20 février de l'année suivante) à une périodicité semestrielle pour la taxe de formation professionnelle continue (TFPC) et la taxe d'apprentissage (TAPP). Les employeurs doivent désormais déposer une déclaration spéciale (même si aucun montant n'est dû) et payer les taxes exigibles au plus tard le 20 du mois suivant la fin de chaque semestre, auprès de la recette des impôts compétente. Cette réforme vise à mieux répartir les sessions de formation tout au long de l'année et à éviter la saturation des établissements en fin d'année.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -574,7 +580,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 261-m</p>
         <p><strong>Article LF 2026 :</strong> Art. 22 — Les notaires déposent un extrait sommaire des actes portant translation ou attribution de propriété immobilière au bureau de l'enregistrement.</p>
-        <p><strong>Modification apportée :</strong> Simplification de la rédaction ; adaptation à l'enregistrement sur expédition conforme.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 261-m vise à simplifier et moderniser la rédaction sans changer l'obligation de fond. Désormais, les notaires doivent déposer au bureau de l'enregistrement un extrait sommaire des actes qui transfèrent ou attribuent un droit de propriété immobilière, au moment de soumettre ces actes à la formalité d'enregistrement (la mention précise « la minute des actes » a été supprimée). Cette adaptation s'explique par les réformes récentes qui permettent l'enregistrement sur expédition conforme plutôt que sur minute, tout en maintenant intacte l'obligation pour les notaires et les greffiers de déclarer ces mutations afin de mettre à jour les rôles de la taxe foncière.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -583,7 +589,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 281 undecies</p>
         <p><strong>Article LF 2026 :</strong> Art. 23 — Déclaration de l'ISF obligatoire par voie électronique via le portail Jibayatic, tous les 4 ans au plus tard le 30 avril. Auto-liquidation par système automatisé. Paiement par rôle individuel.</p>
-        <p><strong>Modification apportée :</strong> Modernisation de la déclaration ISF ; télédéclaration obligatoire.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 281 undecies vise à moderniser la déclaration de l'impôt sur la fortune (ISF) : désormais, les redevables concernés doivent obligatoirement souscrire leur déclaration tous les 4 ans par voie électronique via le portail de télédéclaration dédié (Jibayatic), avec un calcul automatique de l'impôt et un paiement par rôle individuel. Cela remplace l'ancienne obligation de déclaration papier déposée physiquement aux services fiscaux. Pour l'année 2023, une déclaration exceptionnelle est prévue au plus tard le 30 juin 2025. L'objectif est de simplifier la démarche, de renforcer la confidentialité des informations et de faciliter la constitution d'une base de données nationale fiable.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -592,7 +598,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 282 quinquies</p>
         <p><strong>Article LF 2026 :</strong> Art. 24 — Passage au régime du bénéfice réel au titre de chacune des activités, dans les conditions de l'article 282 quater, à compter de l'année suivant le dépassement du seuil.</p>
-        <p><strong>Modification apportée :</strong> Harmonisation des délais ; passage par activité et non global.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 282 quinquies du Code des impôts directs et taxes assimilées vise à harmoniser les délais de passage au régime d'imposition d'après le bénéfice réel pour les contribuables exerçant plusieurs activités (établissements, boutiques, etc.). Auparavant, si la somme des chiffres d'affaires dépassait le seuil (8 000 000 DA), le contribuable basculait immédiatement au régime du bénéfice réel pour l'ensemble de ses activités dès l'année suivante. Désormais, ce passage s'aligne sur les règles de l'article 282 quater : il s'effectue au titre de chacune des activités, et seulement à compter de l'année qui suit celle du dépassement, dans les conditions prévues par cet article. Cela évite une bascule trop brutale et rend le régime plus cohérent pour les petits opérateurs multiples.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -601,7 +607,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 303</p>
         <p><strong>Article LF 2026 :</strong> Art. 25 — Graduation des peines pénales selon le montant des droits éludés : amende 50 000 à 100 000 DA (≤ 100 000 DA) ; prison 2 à 6 mois + amende (100 000 à 1 M DA) ; prison 6 mois à 2 ans (1 à 5 M DA) ; prison 2 à 5 ans (5 à 10 M DA) ; prison 5 à 10 ans (> 10 M DA).</p>
-        <p><strong>Modification apportée :</strong> Adaptation au pôle pénal économique et financier.</p>
+        <p><strong>Modification apportée :</strong> La modification de l'article 303 du code des impôts directs et taxes assimilées introduit une graduation claire des peines pénales selon le montant des droits éludés : amende de 50 000 à 100 000 DA pour les fraudes ≤ 100 000 DA ; prison de 2 à 6 mois + amende jusqu'à 500 000 DA pour 100 000 à 1 million DA ; prison de 6 mois à 2 ans + amende jusqu'à 2 millions DA pour 1 à 5 millions DA ; prison de 2 à 5 ans + amende jusqu'à 5 millions DA pour 5 à 10 millions DA ; et enfin prison de 5 à 10 ans + amende jusqu'à 10 millions DA au-delà de 10 millions DA. Cette réforme adapte les sanctions au nouveau pôle pénal économique et financier, assouplit la dépendance au calcul préalable par l'administration fiscale et renforce la répression des fraudes importantes ou organisées.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -610,7 +616,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 355</p>
         <p><strong>Article LF 2026 :</strong> Art. 26 — Nouveaux contribuables dispensés des acomptes provisionnels la première année. Règles sur les excédents de versement : demande de remboursement dans un délai de 4 ans ; en cas de cessation, demande au plus tard le 31 décembre de l'année suivante ; décision motivée et notifiée ; réclamation possible (art. 72 et 73 CPF).</p>
-        <p><strong>Modification apportée :</strong> Dispense acomptes première année ; procédure de remboursement des excédents encadrée.</p>
+        <p><strong>Modification apportée :</strong> La modification de l'article 355 (introduite par l'article 26 de la loi de finances concernée) apporte deux changements principaux : les nouveaux contribuables (première année d'activité) sont dispensés du paiement des acomptes provisionnels pour l'impôt sur le revenu (IRG BIC, BNC et revenus agricoles), ce qui allège leur charge au démarrage. Elle précise aussi les règles sur les excédents de versement : en cas de trop-perçu, le remboursement peut être demandé dans un délai de 4 ans auprès du service fiscal compétent ; en cas de cessation d'activité, le remboursement est possible après régularisation de la situation globale du contribuable, avec une décision motivée et possibilité de réclamation. Le reste des règles sur les acomptes (pourcentages, majorations de retard, etc.) reste inchangé.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -628,7 +634,7 @@
 
         <p>
           <strong>Modification apportée :</strong>
-          La modification introduite par l'article 356<sup>quater</sup> simplifie la procédure de remboursement des excédents de versement (trop-perçus) en impôt sur les bénéfices des sociétés (IBS). Désormais, ces demandes ne sont plus traitées comme des réclamations contentieuses, mais comme un simple acte de gestion par le service gestionnaire du dossier fiscal (Direction des Grandes Entreprises, Direction des Impôts de Wilaya ou Centre des impôts compétent). Le délai pour demander le remboursement est fixé à 4 ans à compter de la constatation de l'excédent, et en cas de cessation d'activité, la demande doit être déposée au plus tard le 31 décembre de l'année suivante. La décision doit être motivée et notifiée officiellement, et le contribuable peut la contester via une réclamation classique (articles 72 et 73 du code des procédures fiscales). L'objectif est de réduire fortement les délais de traitement.
+          La modification introduite par l'article 356 quater simplifie la procédure de remboursement des excédents de versement (trop-perçus) en impôt sur les bénéfices des sociétés (IBS). Désormais, ces demandes ne sont plus traitées comme des réclamations contentieuses, mais comme un simple acte de gestion par le service gestionnaire du dossier fiscal (Direction des Grandes Entreprises, Direction des Impôts de Wilaya ou Centre des impôts compétent). Le délai pour demander le remboursement est fixé à 4 ans à compter de la constatation de l'excédent, et en cas de cessation d'activité, la demande doit être déposée au plus tard le 31 décembre de l'année suivante. La décision doit être motivée et notifiée officiellement, et le contribuable peut la contester via une réclamation classique (articles 72 et 73 du code des procédures fiscales). L'objectif est de réduire fortement les délais de traitement.
         </p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
@@ -638,7 +644,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 356 quinquies (nouveau)</p>
         <p><strong>Article LF 2026 :</strong> Art. 28 — Les sociétés non résidentes doivent calculer et payer l'impôt sur les bénéfices réputés distribués (art. 46-9°) dans les conditions et délais du solde de liquidation IBS.</p>
-        <p><strong>Modification apportée :</strong> Uniformisation du recouvrement de l'impôt sur les bénéfices réputés distribués.</p>
+        <p><strong>Modification apportée :</strong> La modification introduite par la loi de finances 2026 crée un nouvel article 356 quinquies dans le code des impôts directs et taxes assimilées (CIDTA). Elle oblige les sociétés non résidentes (via leurs succursales ou installations en Algérie) à calculer et payer l'impôt sur les bénéfices réputés distribués (visés à l'article 46-9°) selon les mêmes règles et délais que le paiement du solde de liquidation de l'impôt sur les bénéfices des sociétés (IBS), alignant ainsi les modalités sur celles de l'article 356-6 du CIDTA. Cela clarifie et uniformise le recouvrement de cet impôt spécifique.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -647,7 +653,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 364 nonies</p>
         <p><strong>Article LF 2026 :</strong> Art. 29 — Rétablissement des règles de liquidation et versement du solde TLS : auto-liquidation ; solde au plus tard le 20 février ; bordereau spécifique ; pénalités en cas de retard ; excédent imputable ou remboursable.</p>
-        <p><strong>Modification apportée :</strong> Complétion de l'article après suppression accidentelle en 2025.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 364 nonies du code des impôts directs et taxes assimilées vise à rétablir (après sa suppression accidentelle en 2025) les règles précises de liquidation et de versement du solde de la taxe locale de solidarité (TLS) : la taxe est auto-liquidée par le contribuable, le solde (après déduction des acomptes mensuels) doit être payé au plus tard le 20 février, avec bordereau spécifique ; en cas de retard, les pénalités s'appliquent ; en cas d'excédent, il est imputé sur les acomptes futurs ou remboursé ; en cas de cession/cessation d'activité, le délai suit l'article 231 decies. En résumé, il s'agit de compléter l'article pour qu'il redevienne complet sur les modalités de paiement, les pénalités et le traitement des excédents de la TLS.</p>
       </div>
     </div>
   </div>
@@ -662,7 +668,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 23</p>
         <p><strong>Article LF 2026 :</strong> Art. 51 — Taux réduit TVA 9 % étendu à : réhabilitation et viabilisation des anciens logements ; prestations restauration et hébergement fournies aux patients par établissements de santé ; prestations formation professionnelle par établissements agréés (hébergement et restauration inclus) ; transports de voyageurs par bus.</p>
-        <p><strong>Modification apportée :</strong> Allègement fiscal sur secteurs prioritaires.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 23 du code des taxes sur le chiffre d'affaires consiste à appliquer le taux réduit de TVA à 9 % à plusieurs nouvelles opérations ou prestations. Concrètement, cela inclut désormais : la réhabilitation et la viabilisation des anciens logements, les services de restauration et d'hébergement fournis par les établissements de santé aux patients, les prestations de formation professionnelle (ainsi que l'hébergement et la restauration) dispensées par les établissements agréés, et le transport de voyageurs par bus (aligné sur le transport ferroviaire). Ces changements visent à alléger la fiscalité sur ces secteurs jugés prioritaires.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -671,7 +677,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 25</p>
         <p><strong>Article LF 2026 :</strong> Art. 52 — TIC tabac : tarification unique cigarettes et tabac à narguilé (2 250 DA/kg + 15 %) ; tabacs à fumer, priser, mâcher : 781 DA/kg + 15 %.</p>
-        <p><strong>Modification apportée :</strong> Unification tarification ; lutte contre la fraude.</p>
+        <p><strong>Modification apportée :</strong> Dans le cadre du Projet de loi de finances pour 2026 en Algérie, la Taxe Intérieure de Consommation (TIC) sur les produits tabagiques a été modifiée pour simplifier le système et lutter contre la fraude. La distinction entre tabac blond et brun disparaît : une tarification unique est appliquée aux cigarettes et au tabac à narguilé (part fixe de 2 250 DA/kg + 15 % sur la valeur du produit), tandis que les tabacs à fumer, à priser ou à mâcher sont taxés à 781 DA/kg avec le même taux proportionnel de 15 %. Cette unification vise à réduire les pratiques de sous-déclaration et à augmenter les recettes fiscales.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -680,7 +686,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 26 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 53 — Produit TIC : 90 % budget État ; 10 % Fonds spécial promotion des exportations (compte 302-153).</p>
-        <p><strong>Modification apportée :</strong> Quote-part exportateurs passée de 5 % à 10 %.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 26 bis du code des taxes sur le chiffre d'affaires vise à renforcer le soutien aux exportateurs. Le texte proposé augmente la quote-part du produit de la taxe intérieure de consommation affectée au Fonds spécial pour la promotion des exportations, passant de 5 % (affecté au compte n° 302-084) à 10 % (affecté au compte n° 302-153). En conséquence, la part revenant au budget général de l'État diminue de 95 % à 90 %. Cette mesure, selon l'exposé des motifs, permet de renforcer les incitations et aides accordées par l'État aux exportateurs.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -689,7 +695,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 28 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 54 — Mise à jour liste produits pétroliers TPP : suppression essence super et normale ; conservation essence sans plomb (1700 DA/HL), gas-oil (900 DA/HL), GPL/C (1 DA/HL).</p>
-        <p><strong>Modification apportée :</strong> Alignement sur la réalité du marché national.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 28 bis du code des taxes sur le chiffre d'affaires, via l'article 54 de la loi de finances pour 2026, met à jour la liste des produits pétroliers soumis à la taxe sur les produits pétroliers (TPP). Elle supprime les références à l'essence super et à l'essence normale, qui ne sont plus commercialisées en Algérie depuis 2021, et conserve uniquement les carburants actuellement en vente comme l'essence sans plomb, le gas-oil et le GPL/C, avec leurs montants de taxe respectifs (par exemple : 1700 DA/HL pour l'essence sans plomb, 900 DA/HL pour le gas-oil et 1 DA/HL pour le GPL/C). Cette mise à jour vise à aligner la législation sur la réalité économique du marché national.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -698,7 +704,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 40</p>
         <p><strong>Article LF 2026 :</strong> Art. 55 — Date limite déclaration et régularisation prorata TVA : 25 mars → 20 mars.</p>
-        <p><strong>Modification apportée :</strong> Alignement sur la déclaration mensuelle de février.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 40 du Code des taxes sur le chiffre d'affaires consiste principalement à avancer la date limite de déclaration et de régularisation du pourcentage de déduction de la TVA (prorata) du 25 mars au 20 mars de chaque année. Cette mesure vise à simplifier les obligations des contribuables mixtes en alignant cette échéance sur le délai de la déclaration mensuelle de février (due au plus tard le 20 mars), évitant ainsi une double déclaration rapprochée et permettant d'intégrer directement la régularisation (reversement ou déduction complémentaire) dans la déclaration du mois de février.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -722,7 +728,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 114</p>
         <p><strong>Article LF 2026 :</strong> Art. 57 — Revalorisation amendes TVA : infraction de base 25 000 DA ; manœuvres frauduleuses 100 000 DA ; défaut plaque identification 10 000 DA ; infraction art. 61 (chantiers, sous-traitants) 50 000 DA.</p>
-        <p><strong>Modification apportée :</strong> Adaptation à l'inflation ; effet dissuasif renforcé.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 114 du code des taxes sur le chiffre d'affaires, dans le cadre de la loi de finances pour 2026, consiste principalement à revaloriser fortement les amendes fiscales liées aux infractions en matière de TVA, afin de les adapter à l'inflation et de renforcer leur effet dissuasif. Ainsi, l'amende de base pour toute infraction passe de 500 à 2 500 DA à 25 000 DA, celle pour manœuvres frauduleuses de 1 000 à 5 000 DA à 100 000 DA, le défaut d'apposition de la plaque d'identification de 1 000 DA à 10 000 DA, et l'infraction aux obligations de l'article 61 (identification des chantiers et sous-traitants) de 1 000 à 5 000 DA à 50 000 DA. Par ailleurs, un nouvel article 51 bis impose aux assujettis à la TVA utilisant des logiciels de caisse pour des opérations non facturées de fournir un engagement ou certificat prouvant la conformité du système (inaltérabilité, sécurisation, archivage des données) pour le contrôle fiscal.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -731,7 +737,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 137</p>
         <p><strong>Article LF 2026 :</strong> Art. 58 — Référence contrainte par corps : articles 597 et suivants ordonnance 66-155 → articles 759 et suivants code de procédure pénale (loi 25-14 du 3 août 2025).</p>
-        <p><strong>Modification apportée :</strong> Mise à jour formelle suite au nouveau CPP.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 137 du code des taxes sur le chiffre d'affaires, par l'article 58 de la loi de finances pour 2026, vise à actualiser la référence légale relative à la contrainte par corps en cas de non-paiement des condamnations pécuniaires (amendes et créances fiscales). L'ancien texte renvoyait aux articles 597 et suivants de l'ordonnance n° 66-155 du 8 juin 1966 portant code de procédure pénale, tandis que le nouveau texte renvoie désormais aux articles 759 et suivants du code de procédure pénale promulgué par la loi n° 25-14 du 3 août 2025. Cette mise à jour est purement formelle et découle de l'adoption du nouveau code de procédure pénale en 2025 ; le mécanisme de contrainte par corps reste applicable dans les mêmes conditions pour recouvrer les sommes dues au fisc.</p>
       </div>
     </div>
   </div>
@@ -746,7 +752,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 359</p>
         <p><strong>Article LF 2026 :</strong> Art. 59 — Artisans bijoutiers explicitement mentionnés ; autorisation fiscale obligatoire pour artisans, fabricants, marchands et exportateurs ; retrait en cas de non-respect ; modalités par arrêté ministériel.</p>
-        <p><strong>Modification apportée :</strong> Clarification cadre fiscal or, argent, platine ; lutte contre le blanchiment.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 359 du code des impôts indirects (par l'article 59 de la loi de finances pour 2026 en Algérie) vise à clarifier et renforcer le cadre fiscal des activités liées à l'or, l'argent et le platine. Elle mentionne explicitement les artisans bijoutiers parmi les professionnels concernés (assimilés aux fabricants), instaure une autorisation fiscale obligatoire pour les artisans, fabricants, marchands et exportateurs (délivrée par l'administration fiscale, avec modalités fixées par arrêté ministériel), et prévoit le retrait de cette autorisation en cas de non-respect des conditions d'exercice. Elle supprime aussi certaines références obsolètes (comme la radiation d'une liste ou les détails sur le perfectionnement passif, déplacés ailleurs) et contribue à mieux lutter contre le blanchiment d'argent dans ce secteur à haut risque.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -755,7 +761,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 377 bis (nouveau) — Section 3 Exportation temporaire</p>
         <p><strong>Article LF 2026 :</strong> Art. 60 — Fabricants et artisans bijoutiers autorisés à exporter temporairement ouvrages or, argent, platine pour réimportation (en l'état ou après transformation à l'étranger). Autorisation préalable administration fiscale pour chaque opération.</p>
-        <p><strong>Modification apportée :</strong> Encadrement exportation temporaire ; perfectionnement passif.</p>
+        <p><strong>Modification apportée :</strong> L'article 60 de la loi de finances pour 2026 crée, dans le code des impôts indirects, une nouvelle section 3 au chapitre IV du titre VI, intitulée « Exportation temporaire des ouvrages d'or, d'argent et de platine aux titres légaux », avec l'article 377 bis. Cette disposition autorise les fabricants et artisans bijoutiers à exporter temporairement leurs ouvrages ouvrés ou mi-ouvrés (or, argent, platine) pour réimportation ultérieure, soit en l'état, soit après transformation ou réparation à l'étranger (perfectionnement passif). L'opération nécessite une autorisation préalable de l'administration fiscale pour chaque envoi, et les modalités sont fixées par arrêté du ministre des finances. Cette mesure, qui remplace ou complète les anciennes références dispersées, vise à encadrer et faciliter ces opérations douanières tout en renforçant les contrôles fiscaux.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -764,7 +770,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 378, 379, 379 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 61 — Section 1 Importation ouvrages titres légaux (378-379) ; Section 2 Importation temporaire (379 bis) : fabricants et artisans autorisés à importer temporairement pour réexportation (perfectionnement actif). Autorisation préalable par opération.</p>
-        <p><strong>Modification apportée :</strong> Encadrement importation temporaire ; admission temporaire.</p>
+        <p><strong>Modification apportée :</strong> L'article 61 de la loi de finances pour 2026 crée, dans le chapitre V du titre VI du code des impôts indirects, deux nouvelles sections : la section 1 « Importation d'ouvrages d'or, d'argent et de platine aux titres légaux » (articles 378 et 379, qui reprennent sans grands changements les règles existantes sur les importations définitives et les exemptions limitées, comme jusqu'à 1 hectogramme) et la section 2 « Importation temporaire des ouvrages d'or, d'argent et de platine à tous titres » avec l'article 379 bis. Ce nouvel article autorise les fabricants et artisans bijoutiers à importer temporairement des ouvrages ouvrés ou mi-ouvrés (or, argent, platine) dans le cadre du régime douanier d'admission temporaire, pour réexportation ultérieure, soit en l'état, soit après transformation ou réparation à l'étranger (perfectionnement actif). Comme pour l'exportation temporaire, chaque opération nécessite une autorisation préalable de l'administration fiscale, avec modalités fixées par arrêté du ministre des finances. Ces mesures visent à encadrer les flux, encourager la création de valeur locale et renforcer les contrôles dans ce secteur sensible.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -773,7 +779,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 403 ter à 403 septies</p>
         <p><strong>Article LF 2026 :</strong> Art. 62 — Droit proportionnel 30 % sur pierres précieuses (perles, diamant, rubis, saphir, émeraude, gemmes) ; assiette : valeur HT ou douane ; payable à l'importation ou première vente. Autorisation ou agrément obligatoire ; déclaration profession ; registre coté et paraphé ; achat auprès de personnes connues.</p>
-        <p><strong>Modification apportée :</strong> Nouveau régime pierres précieuses ; traçabilité ; lutte contre blanchiment.</p>
+        <p><strong>Modification apportée :</strong> L'article 62 de la loi de finances pour 2026 crée, dans le code des impôts indirects, un nouveau titre VI bis intitulé « Pierres précieuses », avec les articles 403 ter à 403 septies. Il institue un droit proportionnel de 30 % sur les pierres précieuses (perles fines ou de culture, diamant, rubis, saphir, émeraude et autres gemmes utilisées en joaillerie, y compris lorsqu'elles ornent des ouvrages en métaux précieux), calculé sur la valeur hors taxes ou en douane, payable à l'importation ou à la première vente. Ce droit remplace la TIC précédente. L'exercice des activités liées aux pierres précieuses nécessite une autorisation fiscale (ou un agrément pour l'importation, avec cahier des charges), et les assujettis doivent déclarer leur profession au bureau de garantie, tenir un registre coté et paraphé pour inscrire nature, nombre, poids et fournisseurs, et acheter uniquement auprès de personnes connues. Ces mesures visent à encadrer le secteur, renforcer la traçabilité et lutter contre le blanchiment d'argent.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -782,7 +788,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 403 octies à 403 duodecies</p>
         <p><strong>Article LF 2026 :</strong> Art. 63 — Marchands métaux et pierres précieuses désignés assujettis LBC-FT ; obligations législation anti-blanchiment ; conditions qualification professionnelle et intégrité (vérification listes ONU et liste nationale terroristes) ; registre clients paraphé ; suspension ou retrait agrément en cas de manquement.</p>
-        <p><strong>Modification apportée :</strong> Harmonisation avec exigences anti-blanchiment.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 63 de la loi de finances pour 2026 crée un nouveau titre VI ter dans le code des impôts indirects, dédié à la prévention et à la lutte contre le blanchiment d'argent et le financement du terrorisme pour les marchands de métaux précieux et pierres précieuses. Elle désigne ces marchands comme assujettis aux obligations de la législation LBC-FT, impose des conditions de qualification professionnelle et d'intégrité (vérification des listes de sanctions et terroristes), exige un registre des clients paraphé par l'administration fiscale, et prévoit des sanctions comme la suspension ou le retrait de l'agrément en cas de non-respect. Cette mesure vise à harmoniser les règles fiscales avec les exigences anti-blanchiment et à renforcer les contrôles dans ce secteur vulnérable.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -791,7 +797,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 485 bis, 485 sexies, 485 septies</p>
         <p><strong>Article LF 2026 :</strong> Art. 64 — Adaptation à Sonelgaz Distribution (fusion des 4 sociétés concessionnaires en une seule). Référence unique à la société Sonelgaz Distribution.</p>
-        <p><strong>Modification apportée :</strong> Mise à jour organisationnelle.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 485 bis (et aux articles connexes 485 sexies et 485 septies) du Code des impôts indirects vise à adapter le texte à la nouvelle organisation de Sonelgaz. Après la fusion des quatre anciennes sociétés concessionnaires de distribution d'électricité et de gaz en une seule entité unique nommée « Sonelgaz Distribution », le texte remplace désormais les références aux « sociétés concessionnaires » par la société unique Sonelgaz Distribution, sans changer les montants du droit fixe perçu sur les factures d'électricité (selon la consommation en kWh), ni les droits spécifiques sur les appareils de radio/TV, ni les modalités de collecte et de répartition des fonds (50 % pour le fonds audiovisuel, 50 % pour la presse et la formation, avec 2 % pour Sonelgaz). Cette mise à jour est purement formelle et organisationnelle.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -800,7 +806,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 523</p>
         <p><strong>Article LF 2026 :</strong> Art. 65 — Inobservation obligations art. 403 nonies (LBC-FT) : amende 50 000 DA par infraction.</p>
-        <p><strong>Modification apportée :</strong> Sanction spécifique anti-blanchiment.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée à l'article 523 du code des impôts indirects (introduite par la loi de finances pour 2026 en Algérie) ajoute une sanction spécifique pour le non-respect des obligations liées à la prévention et à la lutte contre le blanchiment d'argent et le financement du terrorisme (LBC-FT). Désormais, l'inobservation des dispositions de l'article 403 nonies entraîne une amende fiscale fixe de 50 000 DA pour chaque infraction constatée, en plus des sanctions générales existantes (amende de 10 000 à 30 000 DA pour les autres infractions, avec maximum pour les alcools dénaturés). Cette mesure vise à renforcer le dispositif de lutte contre ces délits financiers.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -809,7 +815,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 525 bis (nouveau)</p>
         <p><strong>Article LF 2026 :</strong> Art. 66 — Produits tabagiques manufacturés, alcools purs, boissons alcoolisées et vins saisis (commerce illicite, fabrication clandestine, contrefaçon) doivent être détruits. Modalités par arrêté conjoint Finances, Commerce intérieur, Environnement.</p>
-        <p><strong>Modification apportée :</strong> Cadre légal pour destruction des produits illégaux saisis.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 66 de la loi de finances pour 2026 crée un nouvel article 525 bis dans le code des impôts indirects. Il rend obligatoire la destruction des produits tabagiques manufacturés, alcools purs, boissons alcoolisées et vins saisis lors des opérations de lutte contre le commerce illicite, la fabrication clandestine ou la contrefaçon. Les conditions et modalités précises de cette destruction seront définies par un arrêté conjoint des ministres des Finances, du Commerce intérieur et de l'Environnement. Cette mesure vise à doter la législation d'un cadre clair pour éliminer définitivement ces produits illégaux après confiscation, renforçant ainsi la répression des trafics.</p>
       </div>
     </div>
   </div>
@@ -824,7 +830,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 3 bis</p>
         <p><strong>Article LF 2026 :</strong> Art. 67 — Nouveaux contribuables : déclaration définitive (art. 282 quater) et paiement IFU au plus tard le 20 janvier. Option régime bénéfice réel ou régime simplifié BNC (art. 183) désormais irrévocable.</p>
-        <p><strong>Modification apportée :</strong> Élimination insécurité juridique ; stabilité du suivi administratif.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 67 de la loi de finances pour 2026 (qui semble correspondre à l'article 70 dans le texte final promulgué) modifie l'article 3 bis du code des procédures fiscales. Elle oblige les nouveaux contribuables à souscrire la déclaration définitive prévue à l'article 282 quater du code des impôts directs et taxes assimilées, et à payer spontanément l'impôt forfaitaire unique (IFU) dû, au plus tard le 20 janvier de l'année suivant le début d'activité. Surtout, elle précise que l'option pour le régime du bénéfice réel ou le régime simplifié des professions non commerciales, exercée lors de la déclaration d'existence (article 183), est désormais irrévocable et définitive. Cette mesure vise à éliminer l'insécurité juridique, empêcher les changements opportunistes a posteriori et renforcer l'équité fiscale ainsi que la stabilité du suivi administratif.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -833,7 +839,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 19</p>
         <p><strong>Article LF 2026 :</strong> Art. 68 — Actes de procédure et rôles notifiés et transmis à la dernière adresse communiquée par le contribuable au service gestionnaire.</p>
-        <p><strong>Modification apportée :</strong> Responsabilité du contribuable quant à l'actualisation de ses coordonnées.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 68 de la loi de finances pour 2026 (devenu article 71 dans la version promulguée) complète l'article 19 du code des procédures fiscales. Elle formalise la pratique existante en précisant que les actes de procédures (demandes de justifications, notifications de proposition de rectification, etc.) et les rôles d'imposition sont notifiés et transmis à la dernière adresse communiquée par le contribuable au service gestionnaire de son dossier fiscal (siège, établissement principal, domicile, etc.). Cette mesure renforce la responsabilité du contribuable quant à l'actualisation de ses coordonnées et assure la continuité et la fluidité des échanges avec l'administration fiscale dans le cadre du système déclaratif, y compris pour les contribuables bénéficiant d'exonérations (sur la base de l'article 190 bis du CIDTA).</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
@@ -842,7 +848,7 @@
       <div class="card-body">
         <p><strong>Article du code :</strong> Art. 20</p>
         <p><strong>Article LF 2026 :</strong> Art. 69 — Présentation comptabilité analytique, états consolidés et comptes combinés aux vérificateurs ; notification à dernière adresse ; délai 30 jours pour répondre en cas de présomption transferts indirects de bénéfices (art. 189 CIDTA).</p>
-        <p><strong>Modification apportée :</strong> Obligations documentaires renforcées.</p>
+        <p><strong>Modification apportée :</strong> La modification apportée par l'article 69 de la loi de finances pour 2026 (projet, devenu probablement article similaire dans la loi promulguée n° 25-17) complète l'article 20 du code des procédures fiscales relatif à la vérification de comptabilité. Elle impose aux contribuables qui tiennent une comptabilité analytique de la présenter aux vérificateurs, et à ceux qui établissent des états financiers consolidés ou des comptes combinés (selon la réglementation comptable) de les remettre lors du contrôle. Elle précise également que les actes de procédure et rôles d'imposition sont notifiés à la dernière adresse communiquée par le contribuable. Par ailleurs, elle actualise les références (suppression des renvois aux articles abrogés comme 141 bis CIDTA et 20 ter CPF), fixe un délai de 30 jours pour répondre aux demandes d'éclaircissements en cas de présomption de transferts indirects de bénéfices (remplaçant l'ancien dispositif), et renforce globalement les obligations documentaires pour améliorer l'efficacité du contrôle fiscal.</p>
         <div class="card-actions"><button class="btn-sm btn-print" onclick="event.stopPropagation();printArticle(this)" title="Imprimer"><i class="fas fa-print"></i> Imprimer</button></div>
       </div>
     </div>
