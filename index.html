@@ -1454,7 +1454,102 @@
   }
   </script>
   
-  
+  <style>
+    /* 🇩🇿 RÉFÉRENCE LÉGALE DGI - SIMPLE & PROPRE */
+    :root {
+      --bleu-dgi: #1e3a8a;
+      --vert-clair: #10b981;
+      --gris-clair: #f1f5f9;
+      --gris-texte: #475569;
+      --orange: #f59e0b;
+    }
+    
+    .legal-reference {
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      background: var(--gris-clair);
+      border-left: 4px solid var(--vert-clair);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .legal-reference h4 {
+      margin: 0 0 0.8rem 0;
+      color: var(--bleu-dgi);
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .legal-reference h4 i {
+      color: var(--vert-clair);
+    }
+    
+    .legal-reference ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+    
+    .legal-reference li {
+      margin-bottom: 0.4rem;
+      color: var(--gris-texte);
+    }
+    
+    .legal-reference li::before {
+      content: "→";
+      color: var(--vert-clair);
+      font-weight: bold;
+      margin-right: 0.5rem;
+      display: inline-block;
+      width: 1rem;
+    }
+    
+    .legal-reference a {
+      color: var(--bleu-dgi);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .legal-reference a:hover {
+      color: var(--vert-clair);
+      text-decoration: underline;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .legal-reference {
+        margin: 1rem 0;
+        padding: 1rem;
+      }
+    }
+    </style>
+    
+    <script>
+    function addLegalReferenceToArticles() {
+      const containers = document.querySelectorAll('.article-body, .card-body, .article-content, .card-content');
+      
+      containers.forEach(container => {
+        if (!container.querySelector('.legal-reference')) {
+          const legalRef = document.createElement('div');
+          legalRef.className = 'legal-reference';
+          legalRef.innerHTML = `
+            <h4><i class="fas fa-file-alt"></i> Référence Légale</h4>
+            <ul>
+              <li><a href="https://www.joradp.dz" target="_blank">www.joradp.dz</a></li>
+            </ul>
+          `;
+          container.appendChild(legalRef);
+        }
+      });
+    }
+    
+    // Lancer au chargement
+    document.addEventListener('DOMContentLoaded', addLegalReferenceToArticles);
+    </script>
+    
 
 </body>
 </html>
